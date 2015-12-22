@@ -1,0 +1,12 @@
+[user]
+	name = Boris Filipov
+	email = bfilipov@gmail.com
+[alias]
+   st = status
+   ci = commit
+   cob = checkout -b
+   co = checkout
+   br = branch
+   aa = add --all
+[push]
+	default = matching
