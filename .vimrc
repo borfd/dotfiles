@@ -79,7 +79,7 @@ Plugin 'othree/html5.vim'
 Plugin 'ekalinin/Dockerfile.vim'
 
 """"""" CoffeeScript
-"Plugin 'kchmck/vim-coffee-script'
+Plugin 'kchmck/vim-coffee-script'
 
 """"""" Handlebars
 "Plugin 'nono/vim-handlebars'
@@ -141,6 +141,7 @@ Plugin 'bling/vim-airline'       " UI statusbar niceties
         \ 'c' : 'CMD   ',
         \ '': 'V-BLCK',
         \ }
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'chriskempson/base16-vim' " base16 theme
 Plugin 'dandorman/vim-colors'
 Plugin 'roman/golden-ratio'
@@ -189,6 +190,10 @@ Plugin 'bling/vim-bufferline'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'airblade/vim-gitgutter'
 "Plugin 'thoughtbot/vim-rspec'
+Plugin 'rking/ag.vim'
+Plugin 'Chun-Yang/vim-action-ag'
+" use * to search current word in normal mode
+nmap * <Plug>AgActionWord
 """"" End Code Navigation ===========
 
 call vundle#end() " required for Vundle
