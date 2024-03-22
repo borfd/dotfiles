@@ -56,12 +56,12 @@ Plugin 'jelera/vim-javascript-syntax'
 "Plugin 'Shutnik/jshint2.vim'
 
 """"""" Web Development (HTML/CSS/preprocessors/etc)
-Plugin 'aaronjensen/vim-sass-status'
-Plugin 'cakebaker/scss-syntax.vim'
-Plugin 'groenewege/vim-less'
-Plugin 'hail2u/vim-css3-syntax'
-Plugin 'lukaszb/vim-web-indent'
-Plugin 'othree/html5.vim'
+" Plugin 'aaronjensen/vim-sass-status'
+" Plugin 'cakebaker/scss-syntax.vim'
+" Plugin 'groenewege/vim-less'
+" Plugin 'hail2u/vim-css3-syntax'
+" Plugin 'lukaszb/vim-web-indent'
+" Plugin 'othree/html5.vim'
 "Plugin 'tpope/vim-haml'
 
 """"""" Markdown
@@ -79,7 +79,7 @@ Plugin 'othree/html5.vim'
 Plugin 'ekalinin/Dockerfile.vim'
 
 """"""" CoffeeScript
-Plugin 'kchmck/vim-coffee-script'
+" Plugin 'kchmck/vim-coffee-script'
 
 """"""" Handlebars
 "Plugin 'nono/vim-handlebars'
@@ -106,7 +106,7 @@ Plugin 'skalnik/vim-vroom'    " Run tests with <leader>t
   silent! map <unique> <Leader>T :VroomRunNearestTest<CR>
   silent! map <unique> <Leader>l :VroomRunLastTest<CR>
 
-Plugin 'christoomey/vim-tmux-navigator'  " Navigate between tmux panes and vim splits seamlessly
+" Plugin 'christoomey/vim-tmux-navigator'  " Navigate between tmux panes and vim splits seamlessly
 Plugin 'tpope/vim-fugitive'              " git support from dat tpope
 Plugin 'tpope/vim-endwise'
 "Plugin 'vim-scripts/SyntaxRange' 	 " Allow ranges within a file to define different syntax mappings
@@ -126,7 +126,8 @@ Plugin 'tpope/vim-endwise'
 """"" UI Plugins =======================
 Plugin 'bling/vim-airline'       " UI statusbar niceties
   set laststatus=2               " enable airline even if no splits
-  let g:airline_theme='luna'
+  " let g:airline_theme='luna'
+  let g:airline_theme = "hybrid"
   let g:airline_powerline_fonts=1
   let g:airline_powerline_fonts = 1
   let g:airline_left_sep = ''
@@ -192,6 +193,10 @@ Plugin 'airblade/vim-gitgutter'
 "Plugin 'thoughtbot/vim-rspec'
 Plugin 'rking/ag.vim'
 Plugin 'Chun-Yang/vim-action-ag'
+Plugin 'kristijanhusak/vim-hybrid-material'
+if (has("termguicolors"))
+  set termguicolors
+endif
 " use * to search current word in normal mode
 nmap * <Plug>AgActionWord
 """"" End Code Navigation ===========
@@ -217,9 +222,10 @@ let &t_AB="\e[48;5;%dm"
 let &t_AF="\e[38;5;%dm"
 
 set t_ut= " improve screen clearing by using the background color
-set background=dark
+set background=light
 syntax enable
-colorscheme molokai
+" colorscheme molokai
+colorscheme base16-material
 set enc=utf-8
 set term=screen-256color
 let $TERM='screen-256color'
@@ -283,10 +289,6 @@ let maplocalleader="\\"
 nnoremap <cr> :nohlsearch<cr>
 
 " NO ARROW KEYS COME ON
-map <Left> :echo "no!"<cr>
-map <Right> :echo "no!"<cr>
-map <Up> :echo "no!"<cr>
-map <Down> :echo "no!"<cr>
 
 " Custom split opening / closing behaviour
 map <C-N> :vsp .<CR>
@@ -439,5 +441,5 @@ endif
 """ New things I learn =================
 "command TIL tabe~/Documents/TIL.md
 """ End New things I learn =============
-hi LineNr  guifg=#505050   guibg=Black
+" hi LineNr  guifg=#505050   guibg=Black
 set backspace=indent,eol,start

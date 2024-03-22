@@ -74,7 +74,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
+export EDITOR='vim'
 # else
 #   export EDITOR='mvim'
 # fi
@@ -97,7 +97,7 @@ source $ZSH/oh-my-zsh.sh
 
 # my changes start here
 export CD_TOOLS_HOME="~/Code/cd_tools"
-# eval "$(rbenv init -)"
+eval "$(rbenv init -)"
 alias sd='dig +noall +answer srv'
 alias kubectl-k2='docker run --rm -ti docker.dev.s-cloud.net/kubectl-k2:latest kubectl'
 alias dependency-tree-to-org='\
@@ -121,7 +121,7 @@ alias dependency-tree-to-org='\
 
 #[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 export PATH="/usr/local/opt/terraform@0.11/bin:$PATH"
-source $HOME/.zshenv
+#source $HOME/.zshenv
 #For compilers to find openssl@1.1 you may need to set:
 export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
 export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
@@ -132,18 +132,12 @@ export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig"
 export PATH="$PATH:/Users/boris/bin"
 alias rs2='/Users/boris/bin/remote-sync.sh borisfilipov recommendations-bg-02'
 export PATH="/usr/local/sbin:$PATH"
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/boris/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/boris/Downloads/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/boris/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/boris/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
 export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/2.7.0/bin:$PATH"
 
 [ -d "$HOME/.sc-tools" ] && source "$HOME/.sc-tools/dotfiles/env.zsh" #sc-tools-setup
-export GPG_TTY="$(tty)"
-export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-gpgconf --launch gpg-agent
+#export GPG_TTY="$(tty)"
+#export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+#gpgconf --launch gpg-agent
 eval "$(mcfly init zsh)"
 alias cat='bat --theme "Monokai Extended Bright"'
 alias ls='lsd'
@@ -151,3 +145,36 @@ alias l='ls -l'
 alias la='ls -a'
 alias lla='ls -la'
 alias lt='ls --tree'
+alias whirlpool="ruby -e 'require \"digest\"; p Digest::Whirlpool.hexdigest(ARGV[0])'"
+alias shop='ssh debian@shop.rhythmresearch.com -p 3642'
+alias gst='git status'
+alias gco='git checkout'
+alias gbr='git branch'
+alias gci='git commit'
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/boris/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/boris/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/boris/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/boris/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+alias python=/usr/bin/python3
+
+# # >>> conda initialize >>>
+# # !! Contents within this block are managed by 'conda init' !!
+# __conda_setup="$('/Users/boris/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+# if [ $? -eq 0 ]; then
+#     eval "$__conda_setup"
+# else
+#     if [ -f "/Users/boris/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+#         . "/Users/boris/opt/anaconda3/etc/profile.d/conda.sh"
+#     else
+#         export PATH="/Users/boris/opt/anaconda3/bin:$PATH"
+#     fi
+# fi
+# unset __conda_setup
+# # <<< conda initialize <<<
+
+# export PATH="$HOME/.jenv/bin:$PATH"
+# eval "$(jenv init -)"
+bindkey "\e\e[D" backward-word
+bindkey "\e\e[C" forward-word
